@@ -45,8 +45,8 @@ class StudentServiceTest {
         assertEquals(1L, student.getId());
         assertEquals("小明", student.getName());
         assertEquals(18, student.getAge());
-        verify(studentDao).getById(1L);
-        verify(studentDao, times(1)).getById(1L);
+        verify(studentDao).getById(1L); // 验证 studentDao.getById(1L) 被调用 1 次
+        verify(studentDao, times(1)).getById(1L); // 同上，但可以指定调用次数
     }
 
     @Test
